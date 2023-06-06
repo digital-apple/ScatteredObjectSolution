@@ -1,0 +1,4 @@
+namespace Addresses
+{
+	void Hook();
+}

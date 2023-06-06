@@ -1,0 +1,12 @@
+# dot folders
+.vs/
+.vscode/
+.xmake/
+
+# folders
+build/
+images/
+vs*/
+
+# files
+*.zip

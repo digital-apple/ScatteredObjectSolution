@@ -1,0 +1,8 @@
+# Scattered Object Solution
+
+[Settings]
+AdjustExplosionForce = true		# Enables adjusting the incoming force from explosions from sources such as enchantments or spells.
+AdjustProjectileForce = true	# Enables adjusting the incoming force from projectiles with the arrow, beam, flame or missile types.
+AdjustShoutForce = true			# Enables adjusting the incoming force from shouts or projectiles with the cone type.
+PushSoulGems = true				# Allow soul gems to be affected by incoming forces. (disabling may prevent you from disarming soul gem traps)
+ForceMultiplier = 0.0			# The percentage of force that is going to be applied on references. (0.0 = 0%, 0.5 = 50%, 1.0 = 100%)
