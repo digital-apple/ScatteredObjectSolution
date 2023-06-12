@@ -1,3 +1,4 @@
+#include "Events.h"
 #include "Hooks.h"
 #include "Settings.h"
 
@@ -31,6 +32,8 @@ void InitMessaging()
 		if (a_msg->type == SKSE::MessagingInterface::kDataLoaded) {
 			logs::info("Hooking address(es).");
 			Addresses::Hook();
+			logs::info("Registering event(s).");
+			Events::Events::GetSingleton()->Register();
 		}
 		})) {
 		stl::report_and_fail("Failed to initialize message listener.");

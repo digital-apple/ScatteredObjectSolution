@@ -7,10 +7,16 @@ namespace Addresses
 	{
 		static float thunk(float a_force, RE::bhkRigidBody* a_target, bool a_unk3)
 		{
-			if (a_target) {
+			if (Settings::GetSingleton()->GetToggle() && a_target) {
 				const auto target = static_cast<RE::hkpEntity*>(a_target->referencedObject.get())->GetUserData();
 
-				if (target->GetBaseObject()->GetFormType() != RE::FormType::SoulGem && *Settings::pushSoulGems) {
+				if (target->GetBaseObject()->GetFormType() == RE::FormType::SoulGem) {
+					if (*Settings::pushSoulGems) {
+						return func(a_force, a_target, a_unk3);
+					} else {
+						a_force *= (float)*Settings::forceMultiplier;
+					}
+				} else {
 					a_force *= (float)*Settings::forceMultiplier;
 				}
 			}
